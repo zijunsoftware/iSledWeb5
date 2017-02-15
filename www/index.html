@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Test</title>
+    <!--check it with device-height-->
+    <meta name="viewport" content="user-scalable=no,width=device-width, height=device-height">
+
+    <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.3.1.min.css" />
+    <script src="jquery.mobile/jquery-1.9.1.min.js"></script>
+    <script src="jquery.mobile/jquery.mobile-1.3.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/HSM_HTML5.js"></script>
+
+    <script type="text/javascript">
+        // $("[data-role=footer]").fixedtoolbar({ tapToggle: false });
+        // $("[data-role=header]").fixedtoolbar({ tapToggle: false });
+    </script>
+
+    <style type="text/css">
+        .fixedFooter {
+            position: fixed !important;
+            left: 0px !important;
+            right: 0px !important;
+            bottom: 0px !important;
+            z-index: 999 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-role="page" id="main" data-dom-cache="true">
+
+        <div data-role="header" data-position="fixed">
+            <h1>Main</h1>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+            <!--<a href="#" data-role="button" onclick="doScan()">Scan</a>-->
+
+            <a href="#" data-role="button" onclick="doScan()">Scan</a>
+        </div>
+        <p>Scan Result:</p>
+        <div id="result"></div>
+        <!-- /content -->
+
+        <div data-role="footer" data-position="fixed" class="fixedFooter">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#main" data-icon="home" data-role="button" data-transition="fade" class="ui-btn-active ui-state-persist" data-update-page-padding="false">Main</a></li>
+                    <li><a href="#symbology" data-icon="star" data-role="button" data-transition="fade" data-update-page-padding="false">Symbology</a></li>
+                    <li><a href="#setting" data-icon="gear" data-role="button" data-transition="fade" data-update-page-padding="false">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+    <div data-role="page" id="symbology" data-dom-cache="true" data-transition="fade">
+
+        <div data-role="header" data-position="fixed">
+            <h1>Symbology</h1>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+            <fieldset data-role="controlgroup">
+                <input type="checkbox" name="symbologyAll" id="symbology-all" value="all">
+                <label for="symbology-all">All</label>
+
+                <!--pdf-417-->
+                <input type="checkbox" name="symbology" id="symbology-pdf-417" value="pdf-417">
+                <label for="symbology-pdf-417">PDF 417</label>
+
+                <!--upca-->
+                <input type="checkbox" name="symbology" id="symbology-upca" value="upca">
+                <label for="symbology-upca">UPCA</label>
+                <!--ean13-->
+                <input type="checkbox" name="symbology" id="symbology-ean13" value="ean13">
+                <label for="symbology-ean13">EAN13</label>
+
+                <!--upce0-->
+                <input type="checkbox" name="symbology" id="symbology-upce0" value="upce0">
+                <label for="symbology-upce0">UPCE0</label>
+
+                <!--ean8-->
+                <input type="checkbox" name="symbology" id="symbology-ean8" value="ean8">
+                <label for="symbology-ean8">EAN8</label>
+
+                <!--codabar-->
+                <input type="checkbox" name="symbology" id="symbology-codabar" value="codabar">
+                <label for="symbology-codabar">Codabar</label>
+
+                <!--code39-->
+                <input type="checkbox" name="symbology" id="symbology-code39" value="code39">
+                <label for="symbology-code39">Code39</label>
+
+                <!--interleaved 2 of 5-->
+                <input type="checkbox" name="symbology" id="symbology-interleaved2of5" value="interleaved2of5">
+                <label for="symbology-interleaved2of5">Interleaved 2 of 5</label>
+
+                <!--nec 2 of 5-->
+                <input type="checkbox" name="symbology" id="symbology-nec2of5" value="nec2of5">
+                <label for="symbology-nec2of5">NEC 2 of 5</label>
+
+                <!--code 93-->
+                <input type="checkbox" name="symbology" id="symbology-code93" value="code93">
+                <label for="symbology-code93">Code93</label>
+
+                <!--straight 2 of 5 iata-->
+                <input type="checkbox" name="symbology" id="symbology-straight2of5-iata" value="straight2of5-iata">
+                <label for="symbology-straight2of5-iata">Straight 2 of 5 IATA</label>
+
+                <!--straight 2 of 5 industrail-->
+                <input type="checkbox" name="symbology" id="symbology-straight2of5-industrial" value="straight2of5-industrial">
+                <label for="symbology-straight2of5-industrial">Straight 2 of 5 Industrial</label>
+
+                <!--matrix 2 of 5-->
+                <input type="checkbox" name="symbology" id="symbology-matrix2of5" value="matrix2of5">
+                <label for="symbology-matrix2of5">Matrix 2 of 5</label>
+
+                <!--code 11-->
+                <input type="checkbox" name="symbology" id="symbology-code11" value="code11">
+                <label for="symbology-code11">Code11</label>
+
+                <!--code128-->
+                <input type="checkbox" name="symbology" id="symbology-code128" value="code128">
+                <label for="symbology-code128">Code128</label>
+
+                <!--gs1 128-->
+                <input type="checkbox" name="symbology" id="symbology-gs1128" value="gs1128">
+                <label for="symbology-gs1128">GS1 128</label>
+
+                <!--telepen-->
+                <input type="checkbox" name="symbology" id="symbology-telpen" value="telpen">
+                <label for="symbology-telpen">Telepen</label>
+
+                <!--msi-->
+                <input type="checkbox" name="symbology" id="symbology-msi" value="msi">
+                <label for="symbology-msi">MSI</label>
+
+                <!--gs1 databar omnidirectional-->
+                <input type="checkbox" name="symbology" id="symbology-gs1-databar-omnidirectional" value="gs1-databar-omnidirectional">
+                <label for="symbology-gs1-databar-omnidirectional">GS1 DataBar Omnidirectional</label>
+
+                <!--gs1 databar limited-->
+                <input type="checkbox" name="symbology" id="symbology-gs1-databar-limited" value="gs1-databar-limited">
+                <label for="symbology-gs1-databar-limited">GS1 DataBar Limited</label>
+
+                <!--gs1 databar expanded-->
+                <input type="checkbox" name="symbology" id="symbology-gs1-databar-expanded" value="gs1-databar-expanded">
+                <label for="symbology-gs1-databar-expanded">GS1 DataBar expanded</label>
+
+                <!--codablock a-->
+                <input type="checkbox" name="symbology" id="symbology-codablock-a" value="codablock-a">
+                <label for="symbology-codablock-a">Codablock A</label>
+
+                <!--codablock f-->
+                <input type="checkbox" name="symbology" id="symbology-codablock-f" value="codablock-f">
+                <label for="symbology-codablock-f">Codablock F</label>
+
+                <!--data matrix-->
+                <input type="checkbox" name="symbology" id="symbology-data-matrix" value="data-matrix">
+                <label for="symbology-data-matrix">Data Matrix</label>
+
+                <!--maxi code-->
+                <input type="checkbox" name="symbology" id="symbology-maxi-code" value="maxi-code">
+                <label for="symbology-maxi-code">Maxi Code</label>
+
+                <!--aztec-->
+                <input type="checkbox" name="symbology" id="symbology-aztec" value="aztec">
+                <label for="symbology-aztec">Aztec</label>
+
+                <!--chinese sensible-->
+                <input type="checkbox" name="symbology" id="symbology-chinese-sensible" value="chinese-sensible">
+                <label for="symbology-chinese-sensible">Chinese Sensible</label>
+
+                <!--qrcode-->
+                <input type="checkbox" name="symbology" id="symbology-qrcode" value="qrcode">
+                <label for="symbology-qrcode">QRCode</label>
+
+                <!--tcif linked code39-->
+                <input type="checkbox" name="symbology" id="symbology-tcif-linked-code39" value="tcif-linked-code39">
+                <label for="symbology-tcif-linked-code39">TCIF Linked Code39</label>
+
+                <!--micro pdf417-->
+                <input type="checkbox" name="symbology" id="symbology-micro-pdf417" value="micro-pdf417">
+                <label for="symbology-micro-pdf417">Micro PDF417</label>
+            </fieldset>
+        </div>
+        <script type="text/javascript">
+            var allChecked = false;
+            $("#symbology-all").click(function () {
+                /* it works well
+                $("#symbologyAll").click(function () {
+                    if ($(this).prop("checked") == true) {
+                        $("input[name='symbology[]']").each(function () {
+                            $(this).prop("checked", true).checkboxradio('refresh');
+                           // $("input[name='symbology']").attr('checked', false).checkboxradio('refresh')
+                        })
+                    }
+                    else {
+                        $("input[name='symbology[]']").each(function () {
+                            $(this).prop("checked", false).checkboxradio('refresh');
+                        })
+                    }
+                    */
+                allChecked = !allChecked;
+                localStorage.setItem("all", allChecked);
+                if ($(this).prop('checked')) {
+                    $("input[name='symbology']").prop("checked", true).checkboxradio("refresh");
+
+                } else {
+                    $("input[name='symbology']").prop("checked", false).checkboxradio("refresh");
+                };
+            })
+
+            window.onload = function () {
+                var all = localStorage.getItem("all");
+                if (all) {
+                    $("input[type='checkbox']").prop("checked", true).checkboxradio("refresh");
+                    //$("input[name='symbologyAll']").prop("checked", true).checkboxradio("refresh");
+                    //$("input[name='symbology']").prop("checked", true).checkboxradio("refresh");
+                }
+                else {
+                    $("input[type='checkbox']").prop("checked", false).checkboxradio("refresh");
+                    //$("input[name='symbologyAll']").prop("checked", false).checkboxradio("refresh");
+                    //$("input[name='symbology']").prop("checked", false).checkboxradio("refresh");
+                }
+            }
+
+            //checkbox status change(like checked, unchecked)
+            $(function () {
+                $("input[type='checkbox']").bind("change", function (event, ui) {
+
+                    var checkedId = this.id;
+                    if (!$("#" + checkedId).prop("checked")) { //not checked
+                        allChecked = false;
+                        $("#pTip").html(this.value + " unchecked");  //only for debug
+                        $("input[name='symbologyAll']").attr('checked', false).checkboxradio('refresh');
+                    }
+                    else {
+                        $("#pTip").html(this.value + " checked");
+                    }
+                })
+            })
+        </script>
+
+        <!-- /content -->
+        <div id="pTip">
+            debug message
+       
+        </div>
+
+        <!--dummy, only for layout-->
+        <br />
+        <br />
+        <br />
+        <br />
+        <!--/debug-->
+        <div data-role="footer" data-position="fixed" class="fixedFooter">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#main" data-icon="home" data-role="button" data-transition="none">Main</a></li>
+                    <li><a href="#symbology" data-icon="star" data-role="button" data-transition="none" class="ui-btn-active ui-state-persist">Symbology</a></li>
+                    <li><a href="#setting" data-icon="gear" data-role="button" data-transition="none">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+    <!--setting page-->
+    <div data-role="page" id="setting" data-dom-cache="true" style="font-size: 12px">
+
+        <div data-role="header" data-position="fixed">
+            <h1>Setting</h1>
+        </div>
+        <!-- /header -->
+        <div data-role="content">
+            <table>
+                <!--Decoder-->
+                <tr>
+                    <td>Decoder:</td>
+                </tr>
+                <tr>
+                    <td style="width: 35%">
+                     <!--   <button id="setting-decoder-enable" value="1" data-mini="true" onclick="enableDecoder();">Enable</button>-->
+                        <a href="#" data-role="button" onclick="enableDecoder()">Enable</a>                        
+                    </td>
+                    <td style="width: 35%">
+                        <button id="setting-decoder-disable" value="0" data-mini="true" onclick="disableDecoder();">Disable</button>
+                    </td>
+                </tr>
+
+                <!--Aimer-->
+                <tr>
+                    <td>Aimer:</td>
+                </tr>
+                <tr>
+                    <td style="width: 35%">
+                        <button id="setting-aimer-enable" value="1" data-mini="true">Enable</button>
+                    </td>
+                    <td style="width: 35%">
+                        <button id="setting-aimer-disable" value="0" data-mini="true">Disable</button>
+                    </td>
+                </tr>
+
+                <!--Illumination-->
+                <tr>
+                    <td>Illumination:</td>
+                </tr>
+                <tr>
+                    <td style="width: 35%">
+                        <button id="setting-illumination-enable" value="1" data-mini="true">Enable</button>
+                    </td>
+                    <td style="width: 35%">
+                        <button id="setting-illumination-disable" value="0" data-mini="true">Disable</button>
+                    </td>
+                </tr>
+
+                <!--Trigger-->
+                <tr>
+                    <td>
+                        Trigger:
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 35%">
+                        <button id="setting-trigger-enable" value="1" data-mini="true">Enable</button>
+                    </td>
+                    <td style="width: 35%">
+                        <button id="setting-trigger-disable" value="0" data-mini="true">Disable</button>
+                    </td>
+                </tr>
+
+                <!--Decoder hardware-->
+                <tr>
+                    <td>
+                        Decoder hardware:
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 35%">
+                        <button id="setting-decoder-hardware-enable" value="1" data-mini="true">Enable</button>
+                    </td>
+                    <td style="width: 35%">
+                        <button id="setting-decoder-hardware-disable" value="0" data-mini="true">Disable</button>
+                    </td>
+                </tr>
+                <!--beep-->
+                 <!--Decoder hardware-->
+                <tr>
+                    <td>
+                        Trigger click:
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 35%">
+                        <button id="setting-trigger-click-enable" value="1" data-mini="true">Enable</button>
+                    </td>
+                    <td style="width: 35%">
+                        <button id="setting-trigger-click-disable" value="0" data-mini="true">Disable</button>
+                    </td>
+                </tr>
+
+                <!--Good read delay-->
+                <tr>
+                    <td>
+                        Good read delay:
+                    </td>
+                    <td>
+                        <div data-role="fieldcontain">
+                            <select name="select-native-1" id="Select1" data-mini="true">
+                                <option value="1">Off</option>
+                                <option value="2">1</option>
+                                <option value="2">5</option>
+                                <option value="2">30</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <!--trigger time out-->
+                <tr>
+                    <td>
+                        <p>Trigger timeout(seconds):</p>
+                    </td>
+                    <td>
+                        <div data-role="fieldcontain">
+                            <select name="select-native-1" id="Select2" data-mini="true">
+                                <option value="1">1</option>
+                                <option value="2">5</option>
+                                <option value="2">30</option>
+                                <option value="2">100</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div data-role="collapsible" id="setting-beep-collapse-panel" data-mini="true">
+                <h3>Beep</h3>
+                <div style="border: solid; border-color: blue; border-style: dotted; font-size: 12px">
+                    <table style="width: 100%;">
+                        <!--Power beep-->
+                        <tr>
+                            <td>Power beep
+                            </td>
+                            <td>
+                                <select name="slider" id="setting-beep-power-beep" data-role="slider" data-mini="true">
+                                    <option value="on">On</option>
+                                    <option value="off">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!--Read beep-->
+                        <tr>
+                            <td>Read beep
+                            </td>
+                            <td>
+                                <select name="slider" id="setting-beep-read-beep" data-role="slider" data-mini="true">
+                                    <option value="on">On</option>
+                                    <option value="off">Off</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <!--Good read beeper volume-->
+                        <tr>
+                            <td>
+                                <p>Good read beeper volume:</p>
+                            </td>
+                            <td>
+                                <div data-role="fieldcontain">
+                                    <select name="select-native-1" id="setting-good-read-beeper-volume" data-mini="true">
+                                        <option value="1">Off</option>
+                                        <option value="2">Low</option>
+                                        <option value="3">Mid</option>
+                                        <option value="4">High</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--Good read beeper pitch-->
+                        <tr>
+                            <td>
+                                <p>Good read beeper pitch:</p>
+                            </td>
+                            <td>
+                                <div data-role="fieldcontain">
+                                    <select name="select-native-1" id="setting-good-read-beeper-pitch" data-mini="true">
+                                        <option value="1">High</option>
+                                        <option value="2">Mid</option>
+                                        <option value="3">Low</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--Error read beeper pitch-->
+                        <tr>
+                            <td>
+                                <p>Error read beeper pitch:</p>
+                            </td>
+                            <td>
+                                <div data-role="fieldcontain">
+                                    <select name="select-native-1" id="setting-error-read-beeper-pitch" data-mini="true">
+                                        <option value="1">High</option>
+                                        <option value="2">Mid</option>
+                                        <option value="3">Razz</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <!--Good read beeper duration-->
+                        <tr>
+                            <td>
+                                <p>Good read beeper duration:</p>
+                            </td>
+                            <td>
+                                <div data-role="fieldcontain">
+                                    <select name="select-native-1" id="setting-good-read-beeper-duration" data-mini="true">
+                                        <option value="1">Normal</option>
+                                        <option value="2">Short</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p>Beeps of good read:</p>
+                    <input type="range" name="slider-1" id="setting-beep-number-of-beep-good-read" value="0" min="0" max="9" data-highlight="true" data-theme="a" data-track-theme="b" data-mini="true" />
+
+                    <p>Beeps of error read:</p>
+                    <input type="range" name="slider-1" id="setting-beep-number-of-beep-error-read" value="0" min="0" max="9" data-highlight="true" data-mini="true" />
+                </div>
+            </div>
+            <!--/div, setting-beep-collapse-panel-->
+
+
+            <!--go out of this setting table-->
+            <div data-role="collapsible" data-mini="true" id="setting-passthough-collapse-panel">
+                <h3>Pass though</h3>
+                <div style="border: solid; border-color: blue; border-style: dotted; ">
+                    <p>Please follow user spec to enter the command, pass though:</p>
+                    <!--<label for="textarea-1">Textarea:</label>-->
+                    <textarea name="textarea-1" id="setting-passthough-input" rows="8" cols="40" placeholder="input here" data-clear-btn="true"></textarea>
+                    <button id="setting-passthough-send">Send</button>
+                </div>
+            </div>
+
+              <div data-role="collapsible" data-mini="true" id="setting-data-edit-collapse-panel">
+                <h3>Data editing</h3>
+                <div style="border: solid; border-color: blue; border-style: dotted; ">
+                    <p>Enter prefix and suffix for data:</p>
+                    <!--<label for="textarea-1">Textarea:</label>-->
+                    <textarea name="textarea-1" id="Textarea1" rows="8" cols="40" placeholder="prefix" data-clear-btn="true"></textarea>
+                    <textarea name="textarea-1" id="Textarea2" rows="8" cols="40" placeholder="suffix" data-clear-btn="true"></textarea>
+                    <button id="Button1">Save</button>
+                </div>
+            </div>
+            <br />
+
+        </div>
+
+        <!--dummy, only for layout-->
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!--setting script controller, let it here to -->
+        <script type="text/javascript">
+
+            //Decoder
+            $("#setting-decoder-enable").bind("vclick", enable_decoder);
+            $("#setting-decoder-disable").bind("vclick", enable_decoder)
+
+            function enable_decoder() {
+                if (this.value == 1) {
+                    //alert("true");
+                }
+                else {
+                    //alert('false');
+                }
+            }
+
+            var $saveBtn = $("#setting-passthough-send");
+            $saveBtn.bind("vclick", submit_this);
+
+            function submit_this() {
+                var $inputVal = $("#setting-passthough-input").val();
+                alert($inputVal);
+            }
+
+        </script>
+
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed" class="fixedFooter">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#main" data-icon="home" data-role="button" data-transition="none">Main</a></li>
+                    <li><a href="#symbology" data-icon="star" data-role="button" data-transition="none">Symbology</a></li>
+                    <li><a href="#setting" data-icon="gear" data-role="button" data-transition="none" class="ui-btn-active ui-state-persist">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.3.1.min.css" />
+    <script src="jquery.mobile/jquery-1.9.1.min.js"></script>
+    <script src="jquery.mobile/jquery.mobile-1.3.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/HSM_HTML5.js"></script>
+</head>
+<body>
+
+    <div data-role="page" id="symbology" data-dom-cache="true">
+        <div data-role="header" data-position="fixed">
+            <h1>Symbology</h1>
+        </div>
+        <!-- /header -->
+
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <input type="checkbox" name="symbologyAll" id="symbologyAll" value="all">
+                <label for="symbologyAll">All</label>
+
+                <!--pdf-417-->
+                <input type="checkbox" name="symbology" id="symbology-pdf-417" value="pdf-417">
+                <label for="symbology-pdf-417">PDF 417</label>
+
+                <!--upca-->
+                <input type="checkbox" name="symbology" id="symbology-upca" value="upca">
+                <label for="symbology-upca">UPCA</label>
+                <!--ean13-->
+                <input type="checkbox" name="symbology" id="symbology-ean13" value="ean13">
+                <label for="symbology-ean13">EAN13</label>
+
+                <!--upce0-->
+                <input type="checkbox" name="symbology" id="symbology-upce0" value="upce0">
+                <label for="symbology-upce0">UPCE0</label>
+
+                <!--ean8-->
+                <input type="checkbox" name="symbology" id="symbology-ean8" value="ean8">
+                <label for="symbology-ean8">EAN8</label>
+
+                <!--codabar-->
+                <input type="checkbox" name="symbology" id="symbology-codabar" value="codabar">
+                <label for="symbology-codabar">Codabar</label>
+
+                <!--code39-->
+                <input type="checkbox" name="symbology" id="symbology-code39" value="code39">
+                <label for="symbology-code39">Code39</label>
+
+                <!--interleaved 2 of 5-->
+                <input type="checkbox" name="symbology" id="symbology-interleaved2of5" value="interleaved2of5">
+                <label for="symbology-interleaved2of5">Interleaved 2 of 5</label>
+
+                <!--nec 2 of 5-->
+                <input type="checkbox" name="symbology" id="symbology-nec2of5" value="nec2of5">
+                <label for="symbology-nec2of5">NEC 2 of 5</label>
+
+                <!--code 93-->
+                <input type="checkbox" name="symbology" id="symbology-code93" value="code93">
+                <label for="symbology-code93">Code93</label>
+
+                <!--straight 2 of 5 iata-->
+                <input type="checkbox" name="symbology" id="symbology-straight2of5-iata" value="straight2of5-iata">
+                <label for="symbology-straight2of5-iata">Straight 2 of 5 IATA</label>
+
+                <!--straight 2 of 5 industrail-->
+                <input type="checkbox" name="symbology" id="symbology-straight2of5-industrial" value="straight2of5-industrial">
+                <label for="symbology-straight2of5-industrial">Straight 2 of 5 Industrial</label>
+
+                <!--matrix 2 of 5-->
+                <input type="checkbox" name="symbology" id="symbology-matrix2of5" value="matrix2of5">
+                <label for="symbology-matrix2of5">Matrix 2 of 5</label>
+
+                <!--code 11-->
+                <input type="checkbox" name="symbology" id="symbology-code11" value="code11">
+                <label for="symbology-code11">Code11</label>
+
+                <!--code128-->
+                <input type="checkbox" name="symbology" id="symbology-code128" value="code128">
+                <label for="symbology-code128">Code128</label>
+
+                <!--gs1 128-->
+                <input type="checkbox" name="symbology" id="symbology-gs1128" value="gs1128">
+                <label for="symbology-gs1128">GS1 128</label>
+
+                <!--telepen-->
+                <input type="checkbox" name="symbology" id="symbology-telpen" value="telpen">
+                <label for="symbology-telpen">Telepen</label>
+
+                <!--msi-->
+                <input type="checkbox" name="symbology" id="symbology-msi" value="msi">
+                <label for="symbology-msi">MSI</label>
+
+                <!--gs1 databar omnidirectional-->
+                <input type="checkbox" name="symbology" id="symbology-gs1-databar-omnidirectional" value="gs1-databar-omnidirectional">
+                <label for="symbology-gs1-databar-omnidirectional">GS1 DataBar Omnidirectional</label>
+
+                <!--gs1 databar limited-->
+                <input type="checkbox" name="symbology" id="symbology-gs1-databar-limited" value="gs1-databar-limited">
+                <label for="symbology-gs1-databar-limited">GS1 DataBar Limited</label>
+
+                <!--gs1 databar expanded-->
+                <input type="checkbox" name="symbology" id="symbology-gs1-databar-expanded" value="gs1-databar-expanded">
+                <label for="symbology-gs1-databar-expanded">GS1 DataBar expanded</label>
+
+                <!--codablock a-->
+                <input type="checkbox" name="symbology" id="symbology-codablock-a" value="codablock-a">
+                <label for="symbology-codablock-a">Codablock A</label>
+
+                <!--codablock f-->
+                <input type="checkbox" name="symbology" id="symbology-codablock-f" value="codablock-f">
+                <label for="symbology-codablock-f">Codablock F</label>
+
+                <!--data matrix-->
+                <input type="checkbox" name="symbology" id="symbology-data-matrix" value="data-matrix">
+                <label for="symbology-data-matrix">Data Matrix</label>
+
+                <!--maxi code-->
+                <input type="checkbox" name="symbology" id="symbology-maxi-code" value="maxi-code">
+                <label for="symbology-maxi-code">Maxi Code</label>
+
+                <!--aztec-->
+                <input type="checkbox" name="symbology" id="symbology-aztec" value="aztec">
+                <label for="symbology-aztec">Aztec</label>
+
+                <!--chinese sensible-->
+                <input type="checkbox" name="symbology" id="symbology-chinese-sensible" value="chinese-sensible">
+                <label for="symbology-chinese-sensible">Chinese Sensible</label>
+
+                <!--qrcode-->
+                <input type="checkbox" name="symbology" id="symbology-qrcode" value="qrcode">
+                <label for="symbology-qrcode">QRCode</label>
+
+                <!--tcif linked code39-->
+                <input type="checkbox" name="symbology" id="symbology-tcif-linked-code39" value="tcif-linked-code39">
+                <label for="symbology-tcif-linked-code39">TCIF Linked Code39</label>
+
+                <!--micro pdf417-->
+                <input type="checkbox" name="symbology" id="symbology-micro-pdf417" value="micro-pdf417">
+                <label for="symbology-micro-pdf417">Micro PDF417</label>
+            </fieldset>
+        </div>
+        <script type="text/javascript">
+            var allChecked = false;
+            $("#symbologyAll").click(function () {
+                /* it works
+                $("#symbologyAll").click(function () {
+                    if ($(this).prop("checked") == true) {
+                        $("input[name='symbology[]']").each(function () {
+                            $(this).prop("checked", true).checkboxradio('refresh');
+                           // $("input[name='symbology']").attr('checked', false).checkboxradio('refresh')
+                        })
+                    }
+                    else {
+                        $("input[name='symbology[]']").each(function () {
+                            $(this).prop("checked", false).checkboxradio('refresh');
+                        })
+                    }
+                    */
+                allChecked = !allChecked;
+                localStorage.setItem("all", allChecked);
+                if ($(this).prop('checked')) {
+                    $("input[type='checkbox']").prop("checked", true).checkboxradio("refresh");
+
+                } else {
+                    $("input[type='checkbox']").prop("checked", false).checkboxradio("refresh");
+
+                };
+            })
+
+            window.onload = function () {
+                var all = localStorage.getItem("all");
+                if (all) {
+                    $("input[type='checkbox']").prop("checked", all).checkboxradio("refresh");
+                }
+                else {
+                    $("input[type='checkbox']").prop("checked", false).checkboxradio("refresh");
+                }
+            }
+
+            $(function () {
+                $("input[type='checkbox']").bind("change", function (event, ui) {
+                    // $("#pTip").html(this.id);  //only for debug
+                    var checkedId = this.id;
+                    if (!$("#" + checkedId).prop("checked"))  //this checkbox is not checked
+                    {
+                        allChecked = false;
+                        $("input[name='symbologyAll']").attr('checked', false).checkboxradio('refresh');
+                    }
+                })
+            })
+		</script>
+
+        <!-- /content -->
+        <div id="pTip">
+            debug here
+       
+        </div>
+        <!--/debug-->
+        <div data-role="footer" data-position="fixed" data-id="footernav">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="index.html" data-icon="home" target="_blank" data-prefetch>Main</a></li>
+                    <li><a href="symbology.html" data-icon="star" target="_blank" data-prefetch>Symbology</a></li>
+                    <li><a href="setting.html" data-icon="gear" target="_blank" data-prefetch>Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+</body>
+</html>
